@@ -11,7 +11,7 @@
     "minor": "npm version minor",
     "major": "npm version major",
     "ship": "npm publish --access=public",
-    "postinstall": "npm run build"
+    "preinstall": "npm run build"
   },
   "dependencies": {
     "chalk": "^2.4.2",
