@@ -1,32 +1,32 @@
 #!/usr/bin/env node
 "use strict";
 
-var inquirer = require("inquirer");
-var chalk = require("chalk");
-var resume = require("./data/cv.json");
+import inquirer from "inquirer";
+import chalk from "chalk";
+import resume from "./data/cv.json";
 
-var response = chalk.bold.green;
+const response = chalk.bold.green;
 
-var prompts = {
+const prompts = {
   type: "list",
   name: "options",
   message: "What do you want to know about me?",
   choices: [...Object.keys(resume), "Exit"]
 };
 
-function main() {
+const main = () => {
   console.log(
     "Hello! My name is Arsam Sarabi, I am a Wed developer. Welcome to my CV!"
   );
   resumeHandler();
-}
+};
 
-function resumeHandler() {
+const resumeHandler = () => {
   inquirer.prompt(prompts).then(answer => {
     if (answer.options === "Exit") {
       return;
     }
-    var option = answer.options;
+    const option = answer.options;
 
     console.log(response("--------------------------------------"));
     resume[`${option}`].forEach(info => {
@@ -49,6 +49,6 @@ function resumeHandler() {
         }
       });
   });
-}
+};
 
 main();
