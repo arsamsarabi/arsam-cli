@@ -16,11 +16,9 @@
   "author": "Arsam Sarabi <arsamsarabi@me.com>",
   "license": "MIT",
   "scripts": {
+    "start": "node dist/index.js",
     "build": "babel app --out-dir dist",
-    "patch": "npm version patch",
-    "minor": "npm version minor",
-    "major": "npm version major",
-    "ship": "npm publish --access=public"
+    "lint": "eslint app"
   },
   "dependencies": {
     "chalk": "^2.4.2",
@@ -29,7 +27,10 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2"
+    "@babel/preset-env": "^7.4.2",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   },
   "bin": {
     "arsam": "./dist/index.js"
