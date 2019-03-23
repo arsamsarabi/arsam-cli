@@ -1,3 +1,13 @@
 # Arsam Sarabi's Resume as an interactive terminal app
 
-TBC
+## Installation
+
+```shell
+  npm i -g arsam
+```
+
+## Run
+
+```shell
+  arsam
+```

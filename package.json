@@ -2,6 +2,16 @@
   "name": "arsam",
   "version": "0.2.4",
   "description": "Arsam Sarabi's portfolio in an interactive terminal app",
+  "keywords": [
+    "arsam",
+    "sarabi",
+    "frontend",
+    "backend",
+    "fullstack",
+    "web developer",
+    "react",
+    "node"
+  ],
   "repository": "git@github.com:arsamsarabi/arsam-cli.git",
   "author": "Arsam Sarabi <arsamsarabi@me.com>",
   "license": "MIT",
