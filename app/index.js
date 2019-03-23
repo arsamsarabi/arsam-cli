@@ -54,7 +54,7 @@ const resumeHandler = () => {
 const main = () => {
   asciify('Arsam Sarabi', { font: 'straight' }, (err, res) => {
     console.log(chalk.cyan(res));
-    response('green')('Hello! My name is Arsam, Welcome to my CV!');
+    response('green')('Hello! I am Arsam, Welcome to my CV!');
     resumeHandler();
   });
 };
