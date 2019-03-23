@@ -1,12 +1,13 @@
 #!/usr/bin/env node
+"use strict";
 
-const inquirer = require("inquirer");
-const chalk = require("chalk");
-const resume = require("./data/cv.json");
+var inquirer = require("inquirer");
+var chalk = require("chalk");
+var resume = require("./data/cv.json");
 
-const response = chalk.bold.green;
+var response = chalk.bold.green;
 
-const prompts = {
+var prompts = {
   type: "list",
   name: "options",
   message: "What do you want to know about me?",
@@ -25,7 +26,7 @@ function resumeHandler() {
     if (answer.options === "Exit") {
       return;
     }
-    const option = answer.options;
+    var option = answer.options;
 
     console.log(response("--------------------------------------"));
     resume[`${option}`].forEach(info => {
