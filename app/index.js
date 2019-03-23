@@ -2,6 +2,7 @@
 
 import inquirer from 'inquirer';
 import chalk from 'chalk';
+import asciify from 'asciify';
 import resume from './data/cv';
 
 const response = colour => text => console.log(chalk[colour](text));
@@ -25,7 +26,11 @@ const resumeHandler = () => {
 
     border();
     resume[`${option}`].data.forEach((info) => {
-      response(resume[`${option}`].style.colour)(`|   => ${info}`);
+      if (option === 'About') {
+        response(resume[`${option}`].style.colour)(`${info}`);
+      } else {
+        response(resume[`${option}`].style.colour)(`| =>  ${info}`);
+      }
     });
     border();
 
@@ -47,8 +52,33 @@ const resumeHandler = () => {
 };
 
 const main = () => {
-  console.log('Hello! My name is Arsam Sarabi, I am a Wed developer. Welcome to my CV!');
-  resumeHandler();
+  asciify('Arsam Sarabi', { font: 'straight' }, (err, res) => {
+    console.log(chalk.cyan(res));
+    response('green')(
+      'Hello! My name is Arsam Sarabi, I am a software Engineer. Welcome to my CV!',
+    );
+    resumeHandler();
+  });
 };
 
 main();
+
+/* smisome1 smslant straight
+
+[
+  "barbwire","basic","bell","big","bigchief",
+  "binary","block","bubble","bulbhead","calgphy2","caligraphy","catwalk","chunky",
+  "coinstak","colossal","computer","contessa","contrast","cosmic","cosmike","cricket",
+  "cursive","cyberlarge","cybermedium","cybersmall","diamond","digital","doh","doom",
+  "dotmatrix","drpepper","eftichess","eftifont","eftipiti","eftirobot","eftitalic",
+  "eftiwall","eftiwater","epic","fender","fourtops","fuzzy","goofy","gothic","graffiti",
+  "hollywood","invita","isometric1","isometric2","isometric3","isometric4","italic",
+  "ivrit","jazmine","jerusalem","katakana","kban","larry3d","lcd","lean","letters",
+  "linux","lockergnome","madrid","marquee","maxfour","mike","mini","mirror","mnemonic",
+  "morse","moscow","nancyj-fancy","nancyj-underlined","o8",
+  "ogre","pawp","peaks","pebbles","pepper","poison","puffy","pyramid","relief","relief2",
+  "rev","roman","rot13","rounded","rowancap","rozzo","runic","runyc","sblood","script",
+  "serifcap","shadow","short","slant","slide","slscript","small",","smkeyboard",
+  "smscript","smshadow","speed","starwars", "stellar","stop","term", "tombstone","twopoint", "weird"
+]
+*/
