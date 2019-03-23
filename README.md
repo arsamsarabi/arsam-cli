@@ -1,4 +1,4 @@
-# Arsam Sarabi's Resume as an interactive terminal app
+# Arsam's resume as an interactive terminal app
 
 ## Installation
 
