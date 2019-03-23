@@ -4,7 +4,10 @@ import inquirer from 'inquirer';
 import chalk from 'chalk';
 import resume from './data/cv';
 
-const response = chalk.bold.green;
+const response = colour => text => console.log(chalk[colour](text));
+const border = () => console.log(
+  chalk.bgBlack.grey('------------------------------------------------------------------'),
+);
 
 const prompts = {
   type: 'list',
@@ -20,11 +23,11 @@ const resumeHandler = () => {
     }
     const option = answer.options;
 
-    console.log(response('--------------------------------------'));
-    resume[`${option}`].forEach((info) => {
-      console.log(response(`|   => ${info}`));
+    border();
+    resume[`${option}`].data.forEach((info) => {
+      response(resume[`${option}`].style.colour)(`|   => ${info}`);
     });
-    console.log(response('--------------------------------------'));
+    border();
 
     inquirer
       .prompt({
