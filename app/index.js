@@ -3,7 +3,7 @@
 
 import inquirer from "inquirer";
 import chalk from "chalk";
-import resume from "./data/cv.json";
+import resume from "./data/cv.js";
 
 const response = chalk.bold.green;
 

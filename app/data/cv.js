@@ -1,9 +1,9 @@
-{
-  "Education": [
+const cv = {
+  Education: [
     "Access to higher education @ Oxford & Cherwell Valley College",
     "BSc Computer Science @ Oxford Brookes University"
   ],
-  "Experience": [
+  Experience: [
     "Senior Frontend Engineer @ Sensyne Health",
     "Development Manager / Scrum Master @ Contact Partners",
     "UX/UI Developer @ Relayware (aka Zift Solutions)",
@@ -16,6 +16,8 @@
     "GraphQL",
     "CSS - Sass - Less - PostCss"
   ],
-  "Projects": ["Coming soon!"],
-  "Contact": ["Email: arsamsarabi@me.com", "Mobile: 077882*****"]
-}
+  Projects: ["Coming soon!"],
+  Contact: ["Email: arsamsarabi@me.com", "Mobile: 077882*****"]
+};
+
+export default cv;
