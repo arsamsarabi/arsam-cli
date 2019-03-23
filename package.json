@@ -1,6 +1,6 @@
 {
   "name": "arsam",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Arsam Sarabi's portfolio in an interactive terminal app",
   "main": "dist/index.js",
   "repository": "git@github.com:arsamsarabi/arsam-cli.git",
