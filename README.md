@@ -1,4 +1,4 @@
-# Arsam's resume as an interactive terminal app
+# Arsam's portfolio as an interactive terminal app
 
 ## Installation
 
