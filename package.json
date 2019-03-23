@@ -10,8 +10,7 @@
     "patch": "npm version patch",
     "minor": "npm version minor",
     "major": "npm version major",
-    "ship": "npm publish --access=public",
-    "preinstall": "npm run build"
+    "ship": "npm publish --access=public"
   },
   "dependencies": {
     "chalk": "^2.4.2",
