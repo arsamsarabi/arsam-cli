@@ -1,0 +1,9 @@
+{
+  "name": "arsam",
+  "version": "0.0.1",
+  "description": "Arsam Sarabi's portfolio in an interactive terminal app",
+  "main": "index.js",
+  "repository": "git@github.com:arsamsarabi/arsam-cli.git",
+  "author": "Arsam Sarabi <arsamsarabi@me.com>",
+  "license": "MIT"
+}
