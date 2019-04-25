@@ -1,6 +1,6 @@
 {
   "name": "arsam",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "Arsam Sarabi's portfolio in an interactive terminal app",
   "entry": "./dist/index.js",
   "keywords": [
