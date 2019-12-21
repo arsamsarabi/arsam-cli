@@ -3,7 +3,7 @@ const cv = {
   About: {
     data: [
       `
-Hi 👋  My name is Arsam and I am a Senior Frontend Engineer. 
+Hi 👋  My name is Arsam and I am a Senior Full-Stack Engineer. 
 I have over 6 years of experience in developing websites and web
 applications and 7 years of experience in management. I am highly
 self-motivated and proactive, with a keen interest in technology.
