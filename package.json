@@ -1,6 +1,6 @@
 {
   "name": "arsam",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Arsam Sarabi's portfolio in an interactive terminal app",
   "entry": "./dist/index.js",
   "keywords": [
@@ -9,9 +9,14 @@
     "frontend",
     "backend",
     "fullstack",
+    "engineer",
     "web developer",
     "react",
-    "node"
+    "freelance",
+    "node",
+    "graphql",
+    "redux",
+    "mobx"
   ],
   "repository": "git@github.com:arsamsarabi/arsam-cli.git",
   "author": "Arsam Sarabi <arsamsarabi@me.com>",
