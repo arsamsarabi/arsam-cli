@@ -1,13 +1,5 @@
-# Arsam's portfolio as an interactive terminal app
-
-## Installation
+# Arsam's résumé in the terminal 🤷🏻‍♂️
 
 ```shell
-  npm i -g arsam
-```
-
-## Run
-
-```shell
-  arsam
+  npx arsam
 ```
