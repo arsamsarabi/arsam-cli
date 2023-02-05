@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { main } from './app'
+import { printMainMenu } from './printMainMenu'
 
-main()
+printMainMenu()
