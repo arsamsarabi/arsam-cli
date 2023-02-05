@@ -1,10 +1,11 @@
 {
   "name": "arsam",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Arsam Sarabi's portfolio in an interactive terminal dist",
   "entry": "./dist/index.js",
   "files": [
-    "lib"
+    "dist",
+    "fonts"
   ],
   "repository": "git@github.com:arsamsarabi/arsam-cli.git",
   "author": {
