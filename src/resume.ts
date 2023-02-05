@@ -1,5 +1,6 @@
-/* eslint-disable quotes */
-const cv = {
+import { ResumeType } from './types'
+
+export const resume: ResumeType = {
   About: {
     data: [
       `
@@ -9,21 +10,21 @@ applications and 7 years of experience in management. I am highly
 self-motivated and proactive, with a keen interest in technology.
 I am looking for a company where I can make a difference with my
 experience in Frontend Engineering, Team Leadership, and management.
-      `,
+      `
     ],
     style: {
-      colour: 'white',
-    },
+      color: 'white'
+    }
   },
   Education: {
     data: [
       `
       🎓  BSc Computer Science @ Oxford Brookes University
-      `,
+      `
     ],
     style: {
-      colour: 'white',
-    },
+      color: 'white'
+    }
   },
   Experience: {
     data: [
@@ -55,11 +56,11 @@ experience in Frontend Engineering, Team Leadership, and management.
       `🔧   In this company, I worked on the Relayware Product application
     and various client portals. Providing a SaaS service to clients
     such as Sony, Dolby and Kaspersky.
-  `,
+  `
     ],
     style: {
-      colour: 'white',
-    },
+      color: 'white'
+    }
   },
   'Tech Stack': {
     data: [
@@ -68,18 +69,16 @@ experience in Frontend Engineering, Team Leadership, and management.
       `💄   Styled-Components | CSS | Sass | Less | PostCss`,
       `✅   Jest | Enzyme | Cypress | Puppeteer | DevTools `,
       `📦   Webpack | Docker | CircleCI | CI/CD`,
-      `🆕   Python | Java | Go`,
+      `🆕   Python | Java | Go`
     ],
     style: {
-      colour: 'white',
-    },
+      color: 'white'
+    }
   },
   Contact: {
     data: [`📟   https://arsam.io`, `📮   arsamsarabi@me.com`],
     style: {
-      colour: 'white',
-    },
-  },
+      color: 'white'
+    }
+  }
 }
-
-export default cv
