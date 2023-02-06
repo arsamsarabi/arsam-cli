@@ -28,9 +28,13 @@ my career.`
 
     🔧  Working on a greenfield project, designing, building and delivering
     MOO's new e-commerce platform; using technologies such as React, NextJs,
-    motion and Apollo GraphQL in the frontend and Apollo server in the BFF layer.
-    🔧  Other technologies that I worked with include: Terraform, AWS, Auth0,
-    Github actions and Netlify.`,
+    motion and Apollo GraphQL in the frontend and Apollo server in the BFF
+    layer. Other technologies that I worked with include: Terraform, AWS, Auth0,
+    Github actions and Netlify.
+    🔧  Actively participate in code reviews and contribute to improving the
+    development process.
+    🔧  Implementing and maintaining shared libraries, tooling and build scripts.
+    `,
 
     `💼  Senior mobile engineer @ CX Loyalty (a.k.a. Tenerity)
 
