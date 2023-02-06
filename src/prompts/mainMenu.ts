@@ -2,11 +2,10 @@ import clear from 'clear'
 import inquirer from 'inquirer'
 import boxen from 'boxen'
 
-import type { SectionTitles } from './types'
-import { resume } from './resume'
-import { printHeader } from './printHeader'
-import { printBackOrExit } from './printBackOrExit'
-import { printEmptyLine } from './printEmptyLine'
+import type { SectionTitles } from '../types'
+import { resume } from '../data'
+import { backOrExit } from './backOrExit'
+import { emptyLine, printHeader } from '../utils'
 
 const prompts = {
   type: 'list',
@@ -15,7 +14,7 @@ const prompts = {
   choices: [...Object.keys(resume), 'Exit']
 }
 
-export const printMainMenu = async () => {
+export const mainMenu = async () => {
   clear()
   await printHeader()
   inquirer.prompt([prompts]).then((answer) => {
@@ -23,11 +22,11 @@ export const printMainMenu = async () => {
 
     const option: SectionTitles = answer.options
 
-    printEmptyLine()
+    emptyLine()
     resume[option].forEach((line) => {
       console.log(boxen(line, { padding: 1, title: option }))
     })
-    printEmptyLine()
-    printBackOrExit()
+    emptyLine()
+    backOrExit()
   })
 }

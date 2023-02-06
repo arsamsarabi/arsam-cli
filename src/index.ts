@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { printMainMenu } from './printMainMenu'
+import { mainMenu } from './prompts'
 
-printMainMenu()
+mainMenu()

@@ -1,11 +1,11 @@
 import inquirer from 'inquirer'
 
-import { printMainMenu } from './printMainMenu'
+import { mainMenu } from './mainMenu'
 
 const BACK = '🏠 Back'
 const EXIT = '🚫 Exit'
 
-export const printBackOrExit = () => {
+export const backOrExit = () => {
   inquirer
     .prompt({
       type: 'list',
@@ -15,7 +15,7 @@ export const printBackOrExit = () => {
     })
     .then((choice) => {
       if (choice.exitBack === BACK) {
-        printMainMenu()
+        mainMenu()
       } else {
         return
       }

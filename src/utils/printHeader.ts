@@ -2,8 +2,8 @@ import figlet from 'figlet'
 import chalkAnimation from 'chalk-animation'
 import boxen from 'boxen'
 
-import { printWithColor } from './printWithColor'
-import { printEmptyLine } from './printEmptyLine'
+import { logWithColor } from './logWithColor'
+import { emptyLine } from './emptyLine'
 import { sleep } from './sleep'
 
 export const printHeader = async () => {
@@ -15,13 +15,13 @@ export const printHeader = async () => {
     whitespaceBreak: true
   })
 
-  printEmptyLine()
+  emptyLine()
   const title = chalkAnimation.karaoke(arsam, 6.5)
   await sleep(500)
   title.stop()
-  printEmptyLine()
+  emptyLine()
 
-  printWithColor({
+  logWithColor({
     text: boxen(
       `
     Hello 👋 welcome to my portfolio.
@@ -32,6 +32,6 @@ export const printHeader = async () => {
     color: 'cyanBright'
   })
 
-  printEmptyLine()
-  printEmptyLine()
+  emptyLine()
+  emptyLine()
 }

@@ -1,4 +1,4 @@
-import { ResumeType } from './types'
+import { ResumeType } from '../types'
 
 export const resume: ResumeType = {
   About: [
