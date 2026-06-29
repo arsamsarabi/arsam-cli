@@ -1,3 +1,9 @@
-const config = require('@arsams/prettierrc')
-
-module.exports = config
+export default {
+  semi: false,
+  singleQuote: true,
+  trailingComma: "es5",
+  printWidth: 100,
+  tabWidth: 2,
+  useTabs: false,
+  arrowParens: "always",
+};

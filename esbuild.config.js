@@ -1,12 +1,31 @@
-const builder = require('esbuild')
+import * as esbuild from "esbuild";
 
-const res = builder.buildSync({
-  entryPoints: ['src/index.ts'],
+const config = {
+  entryPoints: ["src/index.ts"],
   bundle: true,
-  outfile: 'dist/index.js',
-  platform: 'node',
-  target: 'node14',
+  outfile: "dist/index.js",
+  platform: "node",
+  target: "node18",
   minify: true,
-  format: 'cjs',
-  sourcemap: false
-})
+  format: "esm",
+  sourcemap: true,
+  banner: {
+    js: "#!/usr/bin/env node",
+  },
+  external: [],
+  treeShaking: true,
+  splitting: false,
+  metafile: false,
+};
+
+async function build() {
+  try {
+    await esbuild.build(config);
+    console.log("✓ Build completed successfully");
+  } catch (error) {
+    console.error("✗ Build failed:", error);
+    process.exit(1);
+  }
+}
+
+build();
