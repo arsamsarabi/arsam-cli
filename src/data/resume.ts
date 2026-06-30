@@ -1,4 +1,4 @@
-import { ResumeType } from '../types'
+import type { ResumeType } from "../types.js";
 
 export const resume: ResumeType = {
   About: [
@@ -19,7 +19,7 @@ As I continue to grow and develop my skills, I am eager to take on new
 challenges and responsibilities, and I believe that a Principal Engineer
 or Staff Engineer role, where I can leverage my expertise in frontend
 development to lead and guide teams, would be the perfect next step in
-my career.`
+my career.`,
   ],
 
   Education: [`🎓  BSc Computer Science @ Oxford Brookes University`],
@@ -75,9 +75,9 @@ my career.`
     `💼   UI Developer @ Relayware (a.k.a Zift Solutions)
     
     🔧   In this company, I worked on the Relayware Product application
-    and various client portals.`
+    and various client portals.`,
   ],
-  'Tech Stack': [
+  "Tech Stack": [
     `🛠   Javascript | Typescript | Node | Express | GraphQL
 ✨   React | Next | Redux | Vue | Svelte | Sveltekit | Mongoose
 💄   Styled-Components | CSS | Sass | Less | PostCss | Emotion
@@ -85,10 +85,10 @@ my career.`
 📦   Webpack | Docker | EsBuild | CI/CD | Github Actions
 🆕   Python | Rust | Go
 📱   React Native | Expo | Android | iOS
-💻   AWS | Terraform | Serverless | Netlify | Heroku | Vercel`
+💻   AWS | Terraform | Serverless | Netlify | Heroku | Vercel`,
   ],
   Contact: [
     `🌠   https://arsam.dev
-📧   arsamsarabi@me.com`
-  ]
-}
+📧   arsamsarabi@me.com`,
+  ],
+};

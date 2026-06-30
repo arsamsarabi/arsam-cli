@@ -1,1 +1,1 @@
-export { resume } from './resume'
+export { resume } from "./resume.js";
