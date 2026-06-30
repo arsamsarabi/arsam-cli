@@ -1,4 +1,4 @@
-import type { ResumeType } from "../types.js";
+import type { ResumeType } from '../types.js'
 
 export const resume: ResumeType = {
   About: [
@@ -77,7 +77,7 @@ my career.`,
     🔧   In this company, I worked on the Relayware Product application
     and various client portals.`,
   ],
-  "Tech Stack": [
+  'Tech Stack': [
     `🛠   Javascript | Typescript | Node | Express | GraphQL
 ✨   React | Next | Redux | Vue | Svelte | Sveltekit | Mongoose
 💄   Styled-Components | CSS | Sass | Less | PostCss | Emotion
@@ -91,4 +91,4 @@ my career.`,
     `🌠   https://arsam.dev
 📧   arsamsarabi@me.com`,
   ],
-};
+}
