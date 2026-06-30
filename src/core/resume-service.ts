@@ -18,12 +18,6 @@ export class ResumeService {
     }
   }
 
-  getAllSections(): ReadonlyArray<ResumeSection> {
-    return this.getSectionTitles()
-      .map((title) => this.getSection(title))
-      .filter((section): section is ResumeSection => section !== null)
-  }
-
   hasSection(title: string): title is SectionTitles {
     return title in this.resume
   }

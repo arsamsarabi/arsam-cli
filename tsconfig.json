@@ -22,19 +22,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
     "isolatedModules": true,
-    "outDir": "./dist",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@/types": ["src/types"],
-      "@/config": ["src/config"],
-      "@/core": ["src/core"],
-      "@/ui": ["src/ui"],
-      "@/data": ["src/data"]
-    }
+    "noEmit": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

@@ -1,7 +1,6 @@
 export const APP_CONFIG = {
   name: 'Arsam',
   title: "Arsam's résumé",
-  version: '2.0.3',
   lastUpdated: 'Feb 2023',
   welcomeMessage: 'Hello 👋 welcome to my portfolio.',
   animationSpeed: 6.5,

@@ -33,11 +33,3 @@ export interface ResumeSection {
   readonly title: SectionTitles
   readonly content: ReadonlyArray<string>
 }
-
-export interface AppContext {
-  readonly resume: ResumeType
-  readonly clearScreen: () => void
-  readonly displayHeader: () => Promise<void>
-  readonly displaySection: (section: ResumeSection) => void
-  readonly promptUser: <T>(choices: MenuChoice) => Promise<T>
-}
