@@ -8,7 +8,7 @@ export const APP_CONFIG = {
 } as const
 
 export const MENU_OPTIONS = {
-  back: '🏠 Back',
+  back: '🏠 Main menu',
   exit: '🚫 Exit',
 } as const
 
@@ -16,10 +16,10 @@ export const FIGLET_CONFIG = {
   font: 'Small Isometric1',
   horizontalLayout: 'default',
   verticalLayout: 'default',
-  width: 80,
+  width: 120,
   whitespaceBreak: true,
 } as const
 
-export const BOXEN_CONFIG = {
+export const BOX_CONFIG = {
   padding: 1,
 } as const
