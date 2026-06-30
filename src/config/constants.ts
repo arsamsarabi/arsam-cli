@@ -12,6 +12,13 @@ export const MENU_OPTIONS = {
   exit: '🚫 Exit',
 } as const
 
+export const PAGINATION_OPTIONS = {
+  older: '◀ Older job',
+  newer: '▶ Newer job',
+} as const
+
+export const PAGINATED_SECTIONS = ['Employment'] as const
+
 export const FIGLET_CONFIG = {
   font: 'Small Isometric1',
   horizontalLayout: 'default',

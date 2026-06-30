@@ -1,3 +1,4 @@
+import chalk from 'chalk'
 import clear from 'clear'
 import figlet from 'figlet'
 import boxen from 'boxen'
@@ -124,6 +125,23 @@ export class TerminalRenderer {
     }
 
     this.emptyLine()
+  }
+
+  displayPaginatedEntry(entry: string, position: string): void {
+    this.emptyLine()
+
+    const normalized = normalizeContent(entry)
+    const lines = normalized.split('\n')
+    const title = lines[0]!
+    const body = lines.slice(1).join('\n').trim() || normalized
+    console.log(this.renderBox(body, title))
+    console.log(chalk.dim(position))
+
+    this.emptyLine()
+  }
+
+  displayInfo(message: string): void {
+    console.log(chalk.dim(message))
   }
 
   displayError(message: string): void {
