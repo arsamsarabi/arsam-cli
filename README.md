@@ -10,7 +10,7 @@ This is a modern, type-safe command line tool that displays my résumé in an in
 - 📦 Modern ESM architecture
 - 🔒 Strict type safety with TypeScript
 - 🏗️ Clean, layered architecture
-- ⚡ Fast builds with esbuild
+- ⚡ Fast builds with Bun
 - 🧪 Highly testable and maintainable
 - 🎯 Single responsibility principle throughout
 
@@ -27,41 +27,40 @@ npx arsam
 ```shell
 npm install -g arsam
 # or
-yarn global add arsam
+bun install -g arsam
 ```
 
 ## Development
 
 ### Prerequisites
 
-- Node.js >= 18.0.0
-- npm >= 8.0.0 or yarn
+- [Bun](https://bun.sh) >= 1.0.0
 
 ### Setup
 
 ```shell
 # Install dependencies
-yarn install
+bun install
 
 # Run in development mode
-yarn dev
+bun dev
 
 # Build the project
-yarn build
+bun run build
 
 # Run the built version
-yarn start
+bun start
 ```
 
 ### Scripts
 
-- `yarn dev` - Run the application in development mode
-- `yarn build` - Build for production
-- `yarn start` - Run the production build
-- `yarn typecheck` - Run TypeScript type checking
-- `yarn lint` - Lint the codebase
-- `yarn prettier` - Format code with Prettier
-- `yarn tidy` - Run both linting and formatting
+- `bun dev` - Run the application in development mode
+- `bun run build` - Build for production
+- `bun start` - Run the production build
+- `bun run typecheck` - Run TypeScript type checking
+- `bun run lint` - Lint the codebase
+- `bun run prettier` - Format code with Prettier
+- `bun run tidy` - Run both linting and formatting
 
 ## Architecture
 
@@ -72,12 +71,10 @@ This project follows modern software architecture principles with clear separati
 - **UI Layer**: Presentation and user interaction
 - **Data Layer**: Data models and content
 
-For detailed architecture documentation, see [ARCHITECTURE.md](./ARCHITECTURE.md).
-
 ## Technical Stack
 
 - **TypeScript 5.3+**: Modern, strict type safety
-- **esbuild**: Fast, modern bundling
+- **Bun**: Fast runtime, package manager, and bundler
 - **ESM**: Native ES modules
 - **inquirer**: Interactive CLI prompts
 - **chalk**: Terminal styling
