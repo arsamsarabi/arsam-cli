@@ -1,6 +1,6 @@
 {
   "name": "arsam",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Arsam Sarabi's portfolio in an interactive terminal app - A modern, type-safe CLI built with TypeScript",
   "type": "module",
   "main": "./dist/index.js",
@@ -42,19 +42,19 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "boxen": "^7.0.1",
-    "chalk": "^5.2.0",
+    "@inquirer/prompts": "^8.5.2",
+    "@oakoliver/lipgloss": "^1.0.3",
+    "boxen": "^8.0.1",
+    "chalk": "^5.6.2",
     "chalk-animation": "^2.0.3",
     "clear": "^0.1.0",
-    "figlet": "^1.5.2",
-    "inquirer": "^9.1.4"
+    "figlet": "^1.5.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/chalk-animation": "^1.6.1",
     "@types/clear": "^0.1.2",
     "@types/figlet": "^1.5.5",
-    "@types/inquirer": "^9.0.3",
     "@types/node": "^20.0.0",
     "eslint": "^10.6.0",
     "husky": "^8.0.3",

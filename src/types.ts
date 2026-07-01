@@ -1,25 +1,14 @@
-import type { ForegroundColorName } from 'chalk'
-import type { MENU_OPTIONS } from './config/constants.js'
+import type { MENU_OPTIONS, PAGINATION_OPTIONS } from './config/constants.js'
 
-export type TextColor = ForegroundColorName
-
-export type SectionTitles = 'About' | 'Education' | 'Employment' | 'Tech Stack' | 'Contact'
+export type SectionTitles = 'About' | 'Education' | 'Recent employment' | 'Tech Stack' | 'Contact'
 
 export type ResumeType = Record<SectionTitles, ReadonlyArray<string>>
 
-export interface LogOptions {
-  readonly text: string
-  readonly color: TextColor
-}
-
-export interface MenuChoice {
-  readonly type: 'list'
-  readonly name: string
-  readonly message: string
-  readonly choices: ReadonlyArray<string>
-}
-
 export type MenuOption = (typeof MENU_OPTIONS)[keyof typeof MENU_OPTIONS]
+
+export type PaginationAction =
+  | (typeof PAGINATION_OPTIONS)[keyof typeof PAGINATION_OPTIONS]
+  | MenuOption
 
 export interface PromptAnswer {
   readonly options: string
@@ -27,6 +16,10 @@ export interface PromptAnswer {
 
 export interface BackOrExitAnswer {
   readonly exitBack: MenuOption
+}
+
+export interface PaginatedNavAnswer {
+  readonly action: PaginationAction
 }
 
 export interface ResumeSection {

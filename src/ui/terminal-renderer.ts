@@ -1,26 +1,88 @@
-import clear from 'clear'
 import chalk from 'chalk'
-import boxen from 'boxen'
+import clear from 'clear'
 import figlet from 'figlet'
+import boxen from 'boxen'
 import chalkAnimation from 'chalk-animation'
-import type { ResumeSection, LogOptions } from '../types.js'
-import { APP_CONFIG, FIGLET_CONFIG, BOXEN_CONFIG } from '../config/index.js'
+import type { ResumeSection } from '../types.js'
+import {
+  APP_CONFIG,
+  FIGLET_CONFIG,
+  BOX_CONFIG,
+  THEME,
+  errorStyle,
+  renderHeader,
+  themedKaraokeFrame,
+} from '../config/index.js'
+
+function normalizeContent(content: string): string {
+  const lines = content.split('\n').map((line) => line.trimEnd())
+  const nonEmpty = lines.filter((line) => line.trim().length > 0)
+  if (nonEmpty.length === 0) return ''
+
+  const indent = Math.min(...nonEmpty.map((line) => line.match(/^(\s*)/)?.[1]?.length ?? 0))
+
+  return lines
+    .map((line) => (line.trim().length === 0 ? '' : line.slice(indent).trimEnd()))
+    .join('\n')
+    .trim()
+}
 
 export class TerminalRenderer {
   clearScreen(): void {
     clear()
   }
 
-  logWithColor({ text, color }: LogOptions): void {
-    console.log(chalk[color](text))
-  }
-
   emptyLine(): void {
     console.log('')
   }
 
+  private renderBox(content: string, title?: string): string {
+    return boxen(normalizeContent(content), {
+      padding: BOX_CONFIG.padding,
+      width: BOX_CONFIG.width,
+      borderStyle: 'round',
+      borderColor: THEME.box.border,
+      ...(title ? { title, titleAlignment: 'left' as const } : {}),
+    })
+  }
+
   private async sleep(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms))
+  }
+
+  private runHeaderAnimation(text: string): { lines: number; stop: () => void } {
+    if (THEME.header.effect !== 'karaoke') {
+      return chalkAnimation[THEME.header.effect](text, APP_CONFIG.animationSpeed)
+    }
+
+    const lineTexts = text.split(/\r\n|\r|\n/)
+    const lines = lineTexts.length
+    const frameDelay = 50 / APP_CONFIG.animationSpeed
+    let frame = 0
+    let stopped = false
+    let initialized = false
+    let timer: ReturnType<typeof setTimeout> | undefined
+
+    const render = (): void => {
+      if (!initialized) {
+        console.log('\n'.repeat(lines - 1))
+        initialized = true
+      }
+      frame++
+      const rendered = lineTexts.map((line) => themedKaraokeFrame(line, frame)).join('\n')
+      // match chalk-animation: log() adds newline so cursor sits below the art for redraw
+      console.log(`\u001B[${lines}F\u001B[G\u001B[2K${rendered}`)
+      if (!stopped) timer = setTimeout(render, frameDelay)
+    }
+
+    timer = setTimeout(render, frameDelay)
+    return {
+      lines,
+      stop() {
+        stopped = true
+        if (timer) clearTimeout(timer)
+      },
+    }
   }
 
   async displayHeader(): Promise<void> {
@@ -33,21 +95,18 @@ export class TerminalRenderer {
     })
 
     this.emptyLine()
-    const animation = chalkAnimation.karaoke(titleText, APP_CONFIG.animationSpeed)
+    const animation = this.runHeaderAnimation(titleText)
     await this.sleep(APP_CONFIG.animationDelay)
     animation.stop()
+    console.log(`\u001B[${animation.lines}F\u001B[G\u001B[2K${renderHeader(titleText)}`)
     this.emptyLine()
 
-    this.logWithColor({
-      text: boxen(
-        `
-    ${APP_CONFIG.welcomeMessage}
-    (updated ${APP_CONFIG.lastUpdated})
-    `,
-        { padding: BOXEN_CONFIG.padding, title: APP_CONFIG.title }
-      ),
-      color: 'cyanBright',
-    })
+    console.log(
+      this.renderBox(
+        `${APP_CONFIG.welcomeMessage}\n(updated ${APP_CONFIG.lastUpdated})`,
+        APP_CONFIG.title
+      )
+    )
 
     this.emptyLine()
     this.emptyLine()
@@ -55,16 +114,32 @@ export class TerminalRenderer {
 
   displaySection(section: ResumeSection): void {
     this.emptyLine()
-    section.content.forEach((line) => {
-      console.log(boxen(line, { padding: BOXEN_CONFIG.padding, title: section.title }))
-    })
+
+    const entries = section.content.map((entry) => normalizeContent(entry)).filter(Boolean)
+    const multi = entries.length > 1
+
+    for (const entry of entries) {
+      // ponytail: job titles with emoji go inside the box; border titles miscount width
+      console.log(multi ? this.renderBox(entry) : this.renderBox(entry, section.title))
+    }
+
     this.emptyLine()
   }
 
+  displayPaginatedEntry(entry: string, position: string): void {
+    this.emptyLine()
+
+    console.log(this.renderBox(normalizeContent(entry)))
+    console.log(chalk.dim(position))
+
+    this.emptyLine()
+  }
+
+  displayInfo(message: string): void {
+    console.log(chalk.dim(message))
+  }
+
   displayError(message: string): void {
-    this.logWithColor({
-      text: `✗ Error: ${message}`,
-      color: 'red',
-    })
+    console.log(errorStyle.render(`✗ Error: ${message}`))
   }
 }

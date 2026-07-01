@@ -1,25 +1,35 @@
+import { SectionTitles } from '../types'
+
 export const APP_CONFIG = {
   name: 'Arsam',
   title: "Arsam's résumé",
-  lastUpdated: 'Feb 2023',
-  welcomeMessage: 'Hello 👋 welcome to my portfolio.',
+  lastUpdated: 'Mar 2026',
+  welcomeMessage: 'Hello 👋 — thanks for stopping by.',
   animationSpeed: 6.5,
   animationDelay: 500,
 } as const
 
 export const MENU_OPTIONS = {
-  back: '🏠 Back',
+  back: '🏠 Main menu',
   exit: '🚫 Exit',
 } as const
+
+export const PAGINATION_OPTIONS = {
+  older: '◀ Older job',
+  newer: '▶ Newer job',
+} as const
+
+export const PAGINATED_SECTIONS: ReadonlyArray<SectionTitles> = ['Recent employment']
 
 export const FIGLET_CONFIG = {
   font: 'Small Isometric1',
   horizontalLayout: 'default',
   verticalLayout: 'default',
-  width: 80,
+  width: 120,
   whitespaceBreak: true,
 } as const
 
-export const BOXEN_CONFIG = {
+export const BOX_CONFIG = {
   padding: 1,
+  width: 78,
 } as const

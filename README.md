@@ -76,9 +76,9 @@ This project follows modern software architecture principles with clear separati
 - **TypeScript 5.3+**: Modern, strict type safety
 - **Bun**: Fast runtime, package manager, and bundler
 - **ESM**: Native ES modules
+- **@oakoliver/lipgloss**: Error styling (Charm Lip Gloss port)
+- **boxen**: Bordered content boxes (emoji-safe width)
 - **inquirer**: Interactive CLI prompts
-- **chalk**: Terminal styling
-- **boxen**: Terminal boxes
 - **figlet**: ASCII art text
 
 ## License
