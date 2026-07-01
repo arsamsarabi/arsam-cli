@@ -84,6 +84,11 @@ export class TerminalRenderer {
     }
   }
 
+  private welcomeContent(): string {
+    const rule = chalk.dim('-'.repeat(BOX_CONFIG.textWidth))
+    return `${APP_CONFIG.welcomeMessage}\n\n${rule}\n(updated ${APP_CONFIG.lastUpdated}) · v${APP_CONFIG.version}`
+  }
+
   async displayHeader(): Promise<void> {
     const titleText = figletHeader(APP_CONFIG.name)
 
@@ -94,12 +99,7 @@ export class TerminalRenderer {
     console.log(`\u001B[${animation.lines}F\u001B[G\u001B[2K${renderHeader(titleText)}`)
     this.emptyLine()
 
-    console.log(
-      this.renderBox(
-        `${APP_CONFIG.welcomeMessage}\n(updated ${APP_CONFIG.lastUpdated})`,
-        APP_CONFIG.title
-      )
-    )
+    console.log(this.renderBox(this.welcomeContent(), APP_CONFIG.title))
 
     this.emptyLine()
     this.emptyLine()
