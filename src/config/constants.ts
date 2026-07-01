@@ -1,8 +1,23 @@
+import { existsSync, readFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { SectionTitles } from '../types'
+
+function readPackageVersion(): string {
+  const here = dirname(fileURLToPath(import.meta.url))
+  for (const base of [join(here, '..'), join(here, '../..')]) {
+    const file = join(base, 'package.json')
+    if (existsSync(file)) {
+      return JSON.parse(readFileSync(file, 'utf-8')).version as string
+    }
+  }
+  return '0.0.0'
+}
 
 export const APP_CONFIG = {
   name: 'Arsam',
   title: "Arsam's résumé",
+  version: readPackageVersion(),
   lastUpdated: 'Mar 2026',
   welcomeMessage: 'Hello 👋 — thanks for stopping by.',
   animationSpeed: 6.5,
@@ -32,4 +47,6 @@ export const FIGLET_CONFIG = {
 export const BOX_CONFIG = {
   padding: 1,
   width: 78,
+  /** Max chars per line inside a titled round box (boxen wrap limit) */
+  textWidth: 70,
 } as const

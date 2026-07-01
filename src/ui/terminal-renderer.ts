@@ -1,18 +1,17 @@
 import chalk from 'chalk'
 import clear from 'clear'
-import figlet from 'figlet'
 import boxen from 'boxen'
 import chalkAnimation from 'chalk-animation'
 import type { ResumeSection } from '../types.js'
 import {
   APP_CONFIG,
-  FIGLET_CONFIG,
   BOX_CONFIG,
   THEME,
   errorStyle,
   renderHeader,
   themedKaraokeFrame,
 } from '../config/index.js'
+import { figletHeader } from './figlet-header.js'
 
 function normalizeContent(content: string): string {
   const lines = content.split('\n').map((line) => line.trimEnd())
@@ -85,14 +84,13 @@ export class TerminalRenderer {
     }
   }
 
+  private welcomeContent(): string {
+    const rule = chalk.dim('-'.repeat(BOX_CONFIG.textWidth))
+    return `${APP_CONFIG.welcomeMessage}\n\n${rule}\n(updated ${APP_CONFIG.lastUpdated}) · v${APP_CONFIG.version}`
+  }
+
   async displayHeader(): Promise<void> {
-    const titleText = figlet.textSync(APP_CONFIG.name, {
-      font: FIGLET_CONFIG.font as figlet.Fonts,
-      horizontalLayout: FIGLET_CONFIG.horizontalLayout as figlet.KerningMethods,
-      verticalLayout: FIGLET_CONFIG.verticalLayout as figlet.KerningMethods,
-      width: FIGLET_CONFIG.width,
-      whitespaceBreak: FIGLET_CONFIG.whitespaceBreak,
-    })
+    const titleText = figletHeader(APP_CONFIG.name)
 
     this.emptyLine()
     const animation = this.runHeaderAnimation(titleText)
@@ -101,12 +99,7 @@ export class TerminalRenderer {
     console.log(`\u001B[${animation.lines}F\u001B[G\u001B[2K${renderHeader(titleText)}`)
     this.emptyLine()
 
-    console.log(
-      this.renderBox(
-        `${APP_CONFIG.welcomeMessage}\n(updated ${APP_CONFIG.lastUpdated})`,
-        APP_CONFIG.title
-      )
-    )
+    console.log(this.renderBox(this.welcomeContent(), APP_CONFIG.title))
 
     this.emptyLine()
     this.emptyLine()
