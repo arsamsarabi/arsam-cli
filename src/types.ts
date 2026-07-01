@@ -1,6 +1,6 @@
 import type { MENU_OPTIONS, PAGINATION_OPTIONS } from './config/constants.js'
 
-export type SectionTitles = 'About' | 'Education' | 'Employment' | 'Tech Stack' | 'Contact'
+export type SectionTitles = 'About' | 'Education' | 'Recent employment' | 'Tech Stack' | 'Contact'
 
 export type ResumeType = Record<SectionTitles, ReadonlyArray<string>>
 

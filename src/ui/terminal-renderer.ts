@@ -39,6 +39,7 @@ export class TerminalRenderer {
   private renderBox(content: string, title?: string): string {
     return boxen(normalizeContent(content), {
       padding: BOX_CONFIG.padding,
+      width: BOX_CONFIG.width,
       borderStyle: 'round',
       borderColor: THEME.box.border,
       ...(title ? { title, titleAlignment: 'left' as const } : {}),
@@ -118,10 +119,8 @@ export class TerminalRenderer {
     const multi = entries.length > 1
 
     for (const entry of entries) {
-      const lines = entry.split('\n')
-      const title = multi ? lines[0]! : section.title
-      const body = multi ? lines.slice(1).join('\n').trim() || entry : entry
-      console.log(this.renderBox(body, title))
+      // ponytail: job titles with emoji go inside the box; border titles miscount width
+      console.log(multi ? this.renderBox(entry) : this.renderBox(entry, section.title))
     }
 
     this.emptyLine()
@@ -130,11 +129,7 @@ export class TerminalRenderer {
   displayPaginatedEntry(entry: string, position: string): void {
     this.emptyLine()
 
-    const normalized = normalizeContent(entry)
-    const lines = normalized.split('\n')
-    const title = lines[0]!
-    const body = lines.slice(1).join('\n').trim() || normalized
-    console.log(this.renderBox(body, title))
+    console.log(this.renderBox(normalizeContent(entry)))
     console.log(chalk.dim(position))
 
     this.emptyLine()

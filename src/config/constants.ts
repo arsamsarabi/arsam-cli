@@ -1,3 +1,5 @@
+import { SectionTitles } from '../types'
+
 export const APP_CONFIG = {
   name: 'Arsam',
   title: "Arsam's résumé",
@@ -17,7 +19,7 @@ export const PAGINATION_OPTIONS = {
   newer: '▶ Newer job',
 } as const
 
-export const PAGINATED_SECTIONS = ['Employment'] as const
+export const PAGINATED_SECTIONS: ReadonlyArray<SectionTitles> = ['Recent employment']
 
 export const FIGLET_CONFIG = {
   font: 'Small Isometric1',
@@ -29,4 +31,5 @@ export const FIGLET_CONFIG = {
 
 export const BOX_CONFIG = {
   padding: 1,
+  width: 78,
 } as const
