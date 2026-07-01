@@ -22,52 +22,49 @@ function stack(...lines: readonly string[]): string {
 export const resume: ResumeType = {
   About: [
     paragraph(
-      'Hi 👋 My name is Arsam. I am a highly skilled and results-driven Software Engineer with over 10 years of experience in developing and delivering complex software solutions. Proficient in modern frontend technologies and frameworks, including React, Next.js, Svelte, SvelteKit and more!',
-      'I have a proven track record of building scalable, user-friendly, and visually appealing applications; and the ability to work collaboratively in cross-functional teams and lead projects from concept to deployment.',
-      'I am committed to staying current with industry trends and advancements to ensure delivery of top-quality solutions.',
-      'As I continue to grow and develop my skills, I am eager to take on new challenges and responsibilities, and I believe that a Principal Engineer or Staff Engineer role, where I can leverage my expertise in frontend development to lead and guide teams, would be the perfect next step in my career.'
+      "Hi 👋 I'm Arsam — a senior frontend engineer with 10+ years of experience shipping products people actually enjoy using.",
+      'I care about clean architecture, thoughtful UX, and teams that communicate well. I have led squads, owned roadmaps, and stayed hands-on in the codebase — usually at the same time.',
+      'Recent work spans biotech imaging software, e-commerce platforms, and regulated health-tech. I am comfortable in ambiguity, good under release pressure, and happiest when the work has a clear purpose.',
+      'I am building toward Staff-level scope: technical direction, standards that scale beyond one person, and helping teams deliver reliably without burning out.'
     ),
   ],
 
-  Education: ['🎓 BSc Computer Science @ Oxford Brookes University'],
+  Education: ['🎓 BSc Computer Science — Oxford Brookes University'],
 
   'Recent employment': [
     job(
       'ONI',
       'Senior Frontend Engineer',
       [
-        'Senior frontend engineer on the CODI platform for the Aplo Scope super-resolution microscopy system — building interfaces where UI performance and data visualisation support biopharma research, including lipid nanoparticle (LNP) characterisation.',
-        'Team Lead and Technical Product Owner for a Scrum team: owning roadmap alignment with PMs, breaking down product goals into Jira stories and acceptance criteria, and keeping sprint delivery on track while staying hands-on in code.',
-        'Architected and delivered the LNP Prep application frontend as a greenfield project, then led hardening and critical bug-fix work ahead of customer delivery.',
-        'Contributed across Aplo Scope, AutoLNP, and AutoEV — including frontend work that supported first customer shipment readiness.',
-        'Drove frontend modernisation: React upgrade, Mantine adoption, linting and formatting improvements, and team-wide style guidelines.',
+        'Build frontend for CODI and the Aplo Scope platform — desktop super-resolution microscopy software where solid UI and data visualisation help researchers move faster on real biopharma problems, including LNP characterisation.',
+        'Team Lead and Technical Product Owner for a Scrum squad: align roadmaps with PMs, turn goals into well-scoped stories, and keep delivery moving while still writing code myself.',
+        'Owned the LNP Prep frontend end to end — greenfield architecture through hardening and the bug-fix push before customer go-live.',
+        'Shipped across Aplo Scope, AutoLNP, and AutoEV, including work that helped get the first customer shipment out the door.',
+        'Led frontend modernisation: React upgrade, Mantine rollout, better linting and formatting, and style guidelines the whole team could actually follow.',
       ],
       ['Team Lead', 'Technical Product Owner']
     ),
 
     job('MOO', 'Senior Software Engineer', [
-      "Working on a greenfield project, designing, building and delivering MOO's new e-commerce platform using React, Next.js, motion and Apollo GraphQL in the frontend and Apollo Server in the BFF layer. Other technologies include Terraform, AWS, Auth0, GitHub Actions and Netlify.",
-      'Actively participate in code reviews and contribute to improving the development process.',
-      'Implementing and maintaining shared libraries, tooling and build scripts.',
+      "Helped design and build MOO's new e-commerce platform from the ground up — React, Next.js, Framer Motion, and Apollo GraphQL on the frontend, Apollo Server in the BFF, with Terraform, AWS, Auth0, GitHub Actions, and Netlify in the mix.",
+      'Kept code review useful and constructive, and helped tighten how the team shipped.',
+      'Built and maintained shared libraries, tooling, and build scripts the squad relied on daily.',
     ]),
 
     job('CX Loyalty (a.k.a. Tenerity)', 'Senior Mobile Engineer', [
-      'Developed and maintained mobile applications for both iOS and Android platforms using React Native.',
-      'Worked closely with cross-functional teams, including designers, product managers, and backend developers, to deliver high-quality and user-friendly mobile apps that meet business requirements and project timelines.',
-      'Introduced test automation frameworks to the codebase to ensure the delivery of high-quality code.',
+      'Built and maintained React Native apps for iOS and Android.',
+      'Worked with design, product, and backend to ship polished mobile experiences on time.',
+      'Introduced automated testing to catch regressions earlier and raise the quality bar.',
     ]),
 
     job(
       'Sensyne Health',
       'Senior Software Engineer',
       [
-        'Worked closely with the product and design teams to understand requirements and architect and implement frontend applications and new features.',
-        'Implemented and maintained shared libraries.',
-        'Implemented and maintained tooling and build scripts for frontend applications and test frameworks.',
-        'Mentored and coached other developers in my team and the wider engineering team.',
-        'Worked with project managers to develop a living roadmap for product delivery.',
-        'Facilitated all Scrum ceremonies for the team.',
-        'Optimized applications for better performance and accessibility.',
+        'Partnered with product and design to shape requirements and deliver frontend features across health-data applications.',
+        'Owned shared libraries, build tooling, and test infrastructure the wider frontend team depended on.',
+        'Mentored developers across the team and helped PMs keep a realistic, evolving delivery roadmap.',
+        'Ran Scrum ceremonies and pushed for better performance and accessibility across our apps.',
       ],
       ['Tech Lead', 'Scrum Master']
     ),
@@ -76,27 +73,26 @@ export const resume: ResumeType = {
       'Contact Partners',
       'Senior Software Engineer',
       [
-        'Led an engineering team of 6 developers providing SaaS applications for major banks within the UK.',
-        'Hands-on role — alongside management duties, contributed heavily to the implementation of our applications.',
+        'Led a team of six engineers building SaaS products for major UK banks — still hands-on, still shipping code alongside the management work.',
+        'Balanced delivery pressure with enough process to keep a small team focused and predictable.',
       ],
       ['Development Manager', 'Scrum Master']
     ),
 
     job('Relayware (a.k.a. Zift Solutions)', 'UI Developer', [
-      'Worked on the Relayware product application and various client portals.',
+      'Built UI for the core Relayware product and a set of client-facing portals — where I first cut my teeth on production frontend at scale.',
     ]),
   ],
 
   'Tech Stack': [
     stack(
-      '🛠 JavaScript | TypeScript | Node | Express | GraphQL',
-      '✨ React | Next | Redux | Vue | Svelte | SvelteKit | Mongoose',
-      '💄 Styled-Components | CSS | Sass | Less | PostCSS | Emotion',
-      '✅ Jest | Enzyme | Cypress | Puppeteer | DevTools',
-      '📦 Webpack | Docker | esbuild | CI/CD | GitHub Actions',
-      '🆕 Python | Rust | Go',
-      '📱 React Native | Expo | Android | iOS',
-      '💻 AWS | Terraform | Serverless | Netlify | Heroku | Vercel'
+      '🛠 TypeScript | JavaScript | Node | Express | GraphQL',
+      '✨ React | Next.js | Redux | TanStack Query | Vue | Svelte | SvelteKit',
+      '💄 Mantine | Styled-Components | CSS | Sass | Tailwind | Emotion',
+      '✅ Jest | React Testing Library | Cypress | Playwright | DevTools',
+      '📦 Vite | Webpack | esbuild | Docker | CI/CD | GitHub Actions',
+      '📱 React Native | Expo',
+      '💻 AWS | Terraform | Serverless | Netlify | Vercel'
     ),
   ],
 

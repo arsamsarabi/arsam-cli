@@ -3,8 +3,8 @@ import { SectionTitles } from '../types'
 export const APP_CONFIG = {
   name: 'Arsam',
   title: "Arsam's résumé",
-  lastUpdated: 'Feb 2023',
-  welcomeMessage: 'Hello 👋 welcome to my portfolio.',
+  lastUpdated: 'Mar 2026',
+  welcomeMessage: 'Hello 👋 — thanks for stopping by.',
   animationSpeed: 6.5,
   animationDelay: 500,
 } as const
