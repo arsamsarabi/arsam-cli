@@ -1,6 +1,6 @@
 {
   "name": "arsam",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Arsam Sarabi's portfolio in an interactive terminal app - A modern, type-safe CLI built with TypeScript",
   "type": "module",
   "main": "./dist/index.js",
