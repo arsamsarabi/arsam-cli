@@ -1,18 +1,17 @@
 import chalk from 'chalk'
 import clear from 'clear'
-import figlet from 'figlet'
 import boxen from 'boxen'
 import chalkAnimation from 'chalk-animation'
 import type { ResumeSection } from '../types.js'
 import {
   APP_CONFIG,
-  FIGLET_CONFIG,
   BOX_CONFIG,
   THEME,
   errorStyle,
   renderHeader,
   themedKaraokeFrame,
 } from '../config/index.js'
+import { figletHeader } from './figlet-header.js'
 
 function normalizeContent(content: string): string {
   const lines = content.split('\n').map((line) => line.trimEnd())
@@ -86,13 +85,7 @@ export class TerminalRenderer {
   }
 
   async displayHeader(): Promise<void> {
-    const titleText = figlet.textSync(APP_CONFIG.name, {
-      font: FIGLET_CONFIG.font as figlet.Fonts,
-      horizontalLayout: FIGLET_CONFIG.horizontalLayout as figlet.KerningMethods,
-      verticalLayout: FIGLET_CONFIG.verticalLayout as figlet.KerningMethods,
-      width: FIGLET_CONFIG.width,
-      whitespaceBreak: FIGLET_CONFIG.whitespaceBreak,
-    })
+    const titleText = figletHeader(APP_CONFIG.name)
 
     this.emptyLine()
     const animation = this.runHeaderAnimation(titleText)
